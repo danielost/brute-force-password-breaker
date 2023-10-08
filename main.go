@@ -6,25 +6,17 @@ import (
 )
 
 func main() {
-	alphabets := []string{
-		"0123456789",
-		"abcdefghijklmnopqrstuvwxyz",
-		"aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ",
-		"aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789",
-		"aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789!@#$%%^&*",
-	}
-
 	// Усі паролі згенеровані через BitWarden
-	passwords := []string{
-		"87355",
-		"zqcyb",
-		"GpaTJ",
-		"RE5Pd",
-		"W9#j!",
+	passwords := map[string]string{
+		"87355": "0123456789",
+		"zqcyb": "abcdefghijklmnopqrstuvwxyz",
+		"GpaTJ": "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ",
+		"RE5Pd": "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789",
+		"W9#j!": "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789!@#$%%^&*",
 	}
 
-	for i, password := range passwords {
-		breakPassword(password, alphabets[i])
+	for password, alphabet := range passwords {
+		breakPassword(password, alphabet)
 	}
 }
 
